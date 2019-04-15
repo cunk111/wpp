@@ -13,7 +13,7 @@ const toCsv = async (payload, filename) => {
         csv = `${csv}"${text}",`
       }
 
-      fs.writeFile(`${filename}.csv`, csv, 'utf8', (err) => {
+      fs.writeFile(`./output/${filename}.csv`, csv, 'utf8', (err) => {
         if (err) {
           console.log('Some error occured - file either not saved or corrupted file saved.')
         } else {
@@ -24,7 +24,7 @@ const toCsv = async (payload, filename) => {
       return true
     }))
   } else {
-    fs.writeFile(`${filename}.csv`, `"${payload}"`, 'utf8', (err) => {
+    fs.writeFile(`./output/${filename}.csv`, `"${payload}"`, 'utf8', (err) => {
       if (err) {
         console.log('Some error occured - file either not saved or corrupted file saved.')
       }
